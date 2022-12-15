@@ -11,21 +11,13 @@ function TodoList(props) {
               <input
                 type="checkbox"
                 onChange={() => {
-                  const newTodos = props.todos.map((v2) => {
-                    return { ...v2 };
-                  });
-                  newTodos[i].completed = !newTodos[i].completed;
-                  props.setTodos(newTodos);
+                  props.switchCompleted(v.id);
                 }}
                 checked={v.completed}
               />
               <button
                 onClick={() => {
-                  const newTodos = props.todos.map((v2) => {
-                    return { ...v2 };
-                  });
-                  newTodos[i].completed = !newTodos[i].completed;
-                  props.setTodos(newTodos);
+                  props.switchCompleted(v.id);
                 }}
               >
                 {v.completed ? '恢復成未完成' : '設定成已完成'}
@@ -33,9 +25,7 @@ function TodoList(props) {
               {v.text}
               <button
                 onClick={() => {
-                  props.setTodos(
-                    props.todos.filter((v3, i3) => v.id !== v3.id)
-                  );
+                  props.deleteTodoList(v.id);
                 }}
               >
                 刪除

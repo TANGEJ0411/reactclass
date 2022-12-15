@@ -10,12 +10,7 @@ function AddForm(props) {
       }}
       onKeyDown={(event) => {
         if (event.key === 'Enter') {
-          const newTodo = {
-            id: Number(new Date()),
-            text: event.target.value,
-          };
-
-          props.setTodos([newTodo, ...props.todos]);
+          props.addTodo(inputValue);
           setInputValue('');
         }
       }}
