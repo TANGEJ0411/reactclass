@@ -1,0 +1,16 @@
+.completed{
+    text-decoration: line-through;
+    color: grey;
+}
+
+.not-completed{
+    color: green;
+    font-weight: bold;
+}
+
+button{
+    margin-right: 10px;
+}
+input{
+    margin: 20px;
+}
